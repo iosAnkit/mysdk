@@ -12,11 +12,9 @@ let package = Package(
     products: [
         .library(name: "MySDKCore", targets: ["MySDKCore"]),
         .library(name: "MySDKAuth", targets: ["MySDKAuth"]),
-        .library(name: "MySDKUI", targets: ["MySDKUI"]),
     ],
     targets: [
         .target(name: "MySDKCore", dependencies: []),
         .target(name: "MySDKAuth", dependencies: ["MySDKCore"]),
-        .target(name: "MySDKUI", dependencies: ["MySDKCore"])
     ]
 )
