@@ -4,11 +4,11 @@
 // swift-tools-version:5.7
 import PackageDescription
 
+import PackageDescription
+
 let package = Package(
     name: "MySDK",
-    platforms: [
-        .iOS(.v13) // or higher
-    ],
+    platforms: [.iOS(.v13)],
     products: [
         .library(name: "MySDKCore", targets: ["MySDKCore"]),
         .library(name: "MySDKAuth", targets: ["MySDKAuth"]),
@@ -17,13 +17,6 @@ let package = Package(
     targets: [
         .target(name: "MySDKCore", dependencies: []),
         .target(name: "MySDKAuth", dependencies: ["MySDKCore"]),
-        .target(
-            name: "MySDKUI",
-            dependencies: ["MySDKCore"],
-            resources: [
-                // Add resources if you have any (e.g., xibs, images)
-                // .process("Resources")
-            ]
-        )
+        .target(name: "MySDKUI", dependencies: ["MySDKCore"])
     ]
 )
